@@ -13,8 +13,8 @@ const FunFactsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-background-main py-12 sm:py-16 lg:py-20">
-      <div className="w-full max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-[#1c2421] py-12 sm:py-16 lg:py-20">
+      <div className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px]">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16">
           {/* Left Side - Decorative Image */}
           <div className="w-full lg:w-auto order-2 lg:order-1">
@@ -29,8 +29,8 @@ const FunFactsSection = () => {
           <div className="w-full lg:flex-1 order-1 lg:order-2">
             {/* Section Header */}
             <div className="flex items-center gap-2 mb-6 sm:mb-8">
-              <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-text-secondary">#</span>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-text-accent">my-fun-facts</h2>
+              <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-[#c778dd] font-['Fira_Code']">#</span>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-white font-['Fira_Code']">my-fun-facts</h2>
             </div>
 
             {/* Fun Facts Chips */}
@@ -52,7 +52,7 @@ const FunFactsSection = () => {
                   {Array.from({ length: 16 })?.map((_, index) => (
                     <div 
                       key={index}
-                      className="w-1 h-1 bg-text-primary rounded-sm"
+                      className="w-1 h-1 bg-[#abb2bf] rounded-sm"
                     />
                   ))}
                 </div>
@@ -75,7 +75,7 @@ const FunFactsSection = () => {
               {Array.from({ length: 25 })?.map((_, index) => (
                 <div 
                   key={index}
-                  className="w-1 h-1 bg-text-primary rounded-sm"
+                  className="w-1 h-1 bg-[#abb2bf] rounded-sm"
                 />
               ))}
             </div>
