@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,11 +10,13 @@ const Header = () => {
         <div className="flex justify-between items-center mt-6">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img 
-              src="/images/img_header_logo.png" 
-              alt="Elias Portfolio Logo" 
-              className="w-[72px] h-[20px]"
-            />
+            <NavLink to="/">
+              <img 
+                src="/images/img_header_logo.png" 
+                alt="Elias Portfolio Logo" 
+                className="w-[72px] h-[20px]"
+              />
+            </NavLink>
           </div>
 
           {/* Hamburger Menu Icon (Mobile only) */}
@@ -30,29 +33,69 @@ const Header = () => {
           {/* Navigation Menu */}
           <nav className={`${menuOpen ? 'block' : 'hidden'} lg:block absolute lg:relative top-full lg:top-auto left-0 lg:left-auto w-full lg:w-auto bg-bg-header-background lg:bg-transparent z-50 lg:z-auto`}>
             <div className="flex flex-col lg:flex-row lg:items-center lg:gap-4 p-4 lg:p-0">
-              {/* Home - Active/Selected State */}
-              <div className="flex items-center mb-4 lg:mb-0 lg:mr-16">
-                <span className="text-base font-medium leading-sm text-text-secondary">#</span>
-                <span className="text-base font-medium leading-sm text-text-accent">home</span>
-              </div>
+              {/* Home */}
+              <NavLink 
+                to="/" 
+                className="flex items-center mb-4 lg:mb-0 lg:mr-16 hover:opacity-80 transition-opacity" 
+                onClick={() => setMenuOpen(false)}
+              >
+                {({ isActive }) => (
+                  <>
+                    <span className="text-base font-medium leading-sm text-text-secondary">#</span>
+                    <span className={isActive ? "text-base font-medium leading-sm text-text-accent" : "text-base font-normal leading-sm text-text-primary"}>
+                      home
+                    </span>
+                  </>
+                )}
+              </NavLink>
 
               {/* Works */}
-              <div className="flex items-center mb-4 lg:mb-0 lg:mr-4 cursor-pointer hover:opacity-80 transition-opacity">
-                <span className="text-base font-normal leading-sm text-text-secondary">#</span>
-                <span className="text-base font-normal leading-sm text-text-primary">works</span>
-              </div>
+              <NavLink 
+                to="/projects" 
+                className="flex items-center mb-4 lg:mb-0 lg:mr-4 cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => setMenuOpen(false)}
+              >
+                {({ isActive }) => (
+                  <>
+                    <span className="text-base font-normal leading-sm text-text-secondary">#</span>
+                    <span className={isActive ? "text-base font-medium leading-sm text-text-accent" : "text-base font-normal leading-sm text-text-primary"}>
+                      works
+                    </span>
+                  </>
+                )}
+              </NavLink>
 
               {/* About Me */}
-              <div className="flex items-center mb-4 lg:mb-0 lg:mr-4 cursor-pointer hover:opacity-80 transition-opacity">
-                <span className="text-base font-normal leading-sm text-text-secondary">#</span>
-                <span className="text-base font-normal leading-sm text-text-primary">about-me</span>
-              </div>
+              <NavLink 
+                to="/about" 
+                className="flex items-center mb-4 lg:mb-0 lg:mr-4 cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => setMenuOpen(false)}
+              >
+                {({ isActive }) => (
+                  <>
+                    <span className="text-base font-normal leading-sm text-text-secondary">#</span>
+                    <span className={isActive ? "text-base font-medium leading-sm text-text-accent" : "text-base font-normal leading-sm text-text-primary"}>
+                      about-me
+                    </span>
+                  </>
+                )}
+              </NavLink>
 
               {/* Contacts */}
-              <div className="flex items-center mb-4 lg:mb-0 lg:mr-4 cursor-pointer hover:opacity-80 transition-opacity">
-                <span className="text-base font-normal leading-sm text-text-secondary">#</span>
-                <span className="text-base font-normal leading-sm text-text-primary">contacts</span>
-              </div>
+              <NavLink 
+                to="/contact" 
+                className="flex items-center mb-4 lg:mb-0 lg:mr-4 cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => setMenuOpen(false)}
+              >
+                {({ isActive }) => (
+                  <>
+                    <span className="text-base font-normal leading-sm text-text-secondary">#</span>
+                    <span className={isActive ? "text-base font-medium leading-sm text-text-accent" : "text-base font-normal leading-sm text-text-primary"}>
+                      contacts
+                    </span>
+                  </>
+                )}
+              </NavLink>
 
               {/* Language Selector */}
               <div className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">

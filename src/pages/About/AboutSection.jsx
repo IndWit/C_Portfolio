@@ -2,12 +2,12 @@ import React from 'react';
 
 const AboutSection = () => {
   return (
-    <section className="w-full bg-background-main">
-      <div className="w-full max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-[#1c2421]">
+      <div className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px]">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16 py-8 sm:py-12 lg:py-16">
           {/* Text Content */}
           <div className="w-full lg:w-1/2 order-2 lg:order-1">
-            <p className="text-sm sm:text-base leading-6 sm:leading-7 text-text-primary font-normal">
+            <p className="text-sm sm:text-base leading-6 sm:leading-7 text-[#abb2bf] font-normal font-['Fira_Code']">
               Hello, I am Elias!
               <br /><br />
               I am a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.
@@ -32,7 +32,7 @@ const AboutSection = () => {
                   {Array.from({ length: 25 })?.map((_, index) => (
                     <div 
                       key={index}
-                      className="w-1 h-1 bg-text-primary rounded-sm"
+                      className="w-1 h-1 bg-[#abb2bf] rounded-sm"
                     />
                   ))}
                 </div>
@@ -44,7 +44,7 @@ const AboutSection = () => {
                   {Array.from({ length: 20 })?.map((_, index) => (
                     <div 
                       key={index}
-                      className="w-1 h-1 bg-text-primary rounded-sm"
+                      className="w-1 h-1 bg-[#abb2bf] rounded-sm"
                     />
                   ))}
                 </div>
