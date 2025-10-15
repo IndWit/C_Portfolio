@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const AboutSection = () => {
+  const [headerRef, headerVisible] = useScrollAnimation();
+  const [contactsHeaderRef, contactsHeaderVisible] = useScrollAnimation();
+  
   return (
-    <section className="w-full bg-[#1c2421] py-8 lg:py-16">
+    <section className="w-full bg-[var(--bg-primary)] py-8 lg:py-16">
       <div className="w-full max-w-[1366px] mx-auto px-4">
         {/* Decorative Element */}
         <div className="w-[39px] sm:w-[60px] lg:w-[78px] h-auto mb-16 hidden lg:block">
@@ -12,19 +16,24 @@ const AboutSection = () => {
 
         <div className="w-full max-w-[1188px] mx-auto px-4 lg:px-[90px]">
           {/* Section Header */}
-          <div className="flex items-center gap-4 mb-8">
+          <div 
+            ref={headerRef}
+            className={`flex items-center gap-4 mb-8 ${
+              headerVisible ? 'animate-fade-in-left' : 'opacity-0'
+            }`}
+          >
             <div className="flex items-center">
-              <span className="text-[#c778dd] text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">#</span>
-              <span className="text-white text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">about-me</span>
+              <span className="text-[var(--text-accent)] text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">#</span>
+              <span className="text-[var(--text-primary)] text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">about-me</span>
             </div>
-            <div className="w-[163px] sm:w-[250px] lg:w-[326px] h-[1px] bg-[#c778dd]"></div>
+            <div className="w-[163px] sm:w-[250px] lg:w-[326px] h-[1px] bg-[var(--text-accent)]"></div>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
             {/* Left Content */}
             <div className="lg:w-[50%]">
               <div className="flex flex-col gap-6">
-                <p className="text-[#abb2bf] text-sm sm:text-base font-normal leading-[20px] sm:leading-[26px] font-['Fira_Code']">
+                <p className="text-[var(--text-secondary)] text-sm sm:text-base font-normal leading-[20px] sm:leading-[26px] font-['Fira_Code']">
                   Hello, I am Elias!
                   <br /><br />
                   I am a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.
@@ -33,7 +42,7 @@ const AboutSection = () => {
                 </p>
                 
                 <Link to="/about">
-                  <button className="border border-[#c778dd] px-4 py-2 text-white font-medium text-base font-['Fira_Code'] w-fit hover:bg-[#c778dd] hover:bg-opacity-10 transition-colors">
+                  <button className="border border-[var(--text-accent)] px-4 py-2 text-[var(--text-primary)] font-medium text-base font-['Fira_Code'] w-fit hover:bg-[var(--text-accent)] hover:bg-opacity-10 transition-colors">
                     Read more -&gt;
                   </button>
                 </Link>
@@ -100,36 +109,41 @@ const AboutSection = () => {
 
           <div className="w-full max-w-[1248px] mx-auto px-4 lg:px-14">
             {/* Section Header */}
-            <div className="flex items-center gap-4 mb-11">
+            <div 
+              ref={contactsHeaderRef}
+              className={`flex items-center gap-4 mb-11 ${
+                contactsHeaderVisible ? 'animate-fade-in-left' : 'opacity-0'
+              }`}
+            >
               <div className="flex items-center">
-                <span className="text-[#c778dd] text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">#</span>
-                <span className="text-white text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">contacts</span>
+                <span className="text-[var(--text-accent)] text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">#</span>
+                <span className="text-[var(--text-primary)] text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">contacts</span>
               </div>
-              <div className="w-[63px] sm:w-[100px] lg:w-[126px] h-[1px] bg-[#c778dd]"></div>
+              <div className="w-[63px] sm:w-[100px] lg:w-[126px] h-[1px] bg-[var(--text-accent)]"></div>
             </div>
 
             <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
               {/* Left Content */}
               <div className="lg:w-[48%]">
-                <p className="text-[#abb2bf] text-base font-medium leading-[20px] font-['Fira_Code']">
+                <p className="text-[var(--text-secondary)] text-base font-medium leading-[20px] font-['Fira_Code']">
                   I am interested in freelance opportunities. However, if you have other request or question, do not hesitate to contact me
                 </p>
               </div>
 
               {/* Right Content - Contact Box */}
-              <div className="lg:w-[20%] border border-[#abb2bf] p-4">
+              <div className="lg:w-[20%] border border-[var(--border-color)] p-4">
                 <div className="flex flex-col gap-4">
-                  <h3 className="text-white text-base font-semibold font-['Fira_Code']">Message me here</h3>
+                  <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Message me here</h3>
                   
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-1">
                       <img src="/images/img_discord_blue_gray_200.svg" className="w-8 h-8" alt="Discord" />
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">!Elias#3519</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">!Elias#3519</span>
                     </div>
                     
                     <div className="flex items-center gap-1">
                       <img src="/images/img_email.svg" className="w-8 h-8" alt="Email" />
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">elias@elias.me</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">elias@elias.me</span>
                     </div>
                   </div>
                 </div>
@@ -139,7 +153,7 @@ const AboutSection = () => {
         </div>
 
         {/* Footer */}
-        <footer className="w-full border-t border-[#abb2bf] pt-8">
+        <footer className="w-full border-t border-[var(--border-color)] pt-8">
           <div className="w-full max-w-[1366px] mx-auto px-4 lg:px-[170px]">
             <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-12">
               {/* Left Footer Content */}
@@ -147,10 +161,10 @@ const AboutSection = () => {
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-2">
                     <img src="/images/img_union.svg" className="w-4 h-4" alt="Logo" />
-                    <span className="text-white text-base font-medium font-['Fira_Code']">Elias</span>
-                    <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code'] ml-6">elias@elias-dev.ml</span>
+                    <span className="text-[var(--text-primary)] text-base font-medium font-['Fira_Code']">Elias</span>
+                    <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code'] ml-6">elias@elias-dev.ml</span>
                   </div>
-                  <p className="text-white text-base font-normal font-['Fira_Code']">
+                  <p className="text-[var(--text-primary)] text-base font-normal font-['Fira_Code']">
                     Web designer and front-end developer
                   </p>
                 </div>
@@ -159,7 +173,7 @@ const AboutSection = () => {
               {/* Right Footer Content */}
               <div className="lg:w-auto">
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-white text-[20px] sm:text-[24px] font-medium font-['Fira_Code']">Media</h4>
+                  <h4 className="text-[var(--text-primary)] text-[20px] sm:text-[24px] font-medium font-['Fira_Code']">Media</h4>
                   <div className="flex gap-2">
                     <img src="/images/img_github.svg" className="w-8 h-8" alt="GitHub" />
                     <img src="/images/img_figma.svg" className="w-8 h-8" alt="Figma" />
@@ -171,7 +185,7 @@ const AboutSection = () => {
 
             {/* Copyright */}
             <div className="text-center">
-              <p className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">
+              <p className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">
                 © Copyright 2022. Made by Elias
               </p>
             </div>

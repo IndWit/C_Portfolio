@@ -1,6 +1,9 @@
 import React from 'react';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const SkillsSection = () => {
+  const [headerRef, headerVisible] = useScrollAnimation();
+  
   const skillCategories = [
     {
       title: "Languages",
@@ -42,16 +45,21 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-[#1c2421] py-8 lg:py-16">
+    <section className="w-full bg-[var(--bg-primary)] py-8 lg:py-16">
       <div className="w-full max-w-[1366px] mx-auto px-4 lg:px-14">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-4 mb-8">
+        <div 
+          ref={headerRef}
+          className={`flex flex-col lg:flex-row justify-between items-start gap-4 mb-8 ${
+            headerVisible ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
+        >
           <div className="flex items-center gap-4 w-full lg:w-auto">
             <div className="flex items-center">
-              <span className="text-[#c778dd] text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">#</span>
-              <span className="text-white text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">skills</span>
+              <span className="text-[var(--text-accent)] text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">#</span>
+              <span className="text-[var(--text-primary)] text-[24px] sm:text-[28px] lg:text-[32px] font-medium font-['Fira_Code']">skills</span>
             </div>
-            <div className="flex-1 lg:w-[238px] h-[1px] bg-[#c778dd]"></div>
+            <div className="flex-1 lg:w-[238px] h-[1px] bg-[var(--text-accent)]"></div>
           </div>
         </div>
 
@@ -87,117 +95,117 @@ const SkillsSection = () => {
               </div>
               
               {/* Border Box */}
-              <div className="w-[26px] sm:w-[40px] lg:w-[52px] h-[26px] sm:h-[40px] lg:h-[52px] border border-[#abb2bf] self-end"></div>
+              <div className="w-[26px] sm:w-[40px] lg:w-[52px] h-[26px] sm:h-[40px] lg:h-[52px] border border-[var(--border-color)] self-end"></div>
             </div>
 
             {/* Border Box */}
-            <div className="w-[43px] sm:w-[65px] lg:w-[86px] h-[43px] sm:h-[65px] lg:h-[86px] border border-[#abb2bf]"></div>
+            <div className="w-[43px] sm:w-[65px] lg:w-[86px] h-[43px] sm:h-[65px] lg:h-[86px] border border-[var(--border-color)]"></div>
           </div>
 
           {/* Right Side - Skills Grid */}
           <div className="lg:w-[68%]">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {/* Languages */}
-              <div className="border border-[#abb2bf] bg-[#1c2421]">
-                <div className="p-2 border-b border-[#abb2bf]">
-                  <h3 className="text-white text-base font-semibold font-['Fira_Code']">Languages</h3>
+              <div className="border border-[var(--border-color)] bg-[var(--bg-primary)]">
+                <div className="p-2 border-b border-[var(--border-color)]">
+                  <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Languages</h3>
                 </div>
                 <div className="p-2">
                   <div className="flex flex-col gap-2">
                     <div className="flex gap-2">
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">TypeScript</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Lua</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">TypeScript</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Lua</span>
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Python</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">JavaScript</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Python</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">JavaScript</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Databases */}
-              <div className="border border-[#abb2bf] bg-[#1c2421]">
-                <div className="p-2 border-b border-[#abb2bf]">
-                  <h3 className="text-white text-base font-semibold font-['Fira_Code']">Databases</h3>
+              <div className="border border-[var(--border-color)] bg-[var(--bg-primary)]">
+                <div className="p-2 border-b border-[var(--border-color)]">
+                  <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Databases</h3>
                 </div>
                 <div className="p-2">
                   <div className="flex flex-col gap-2">
                     <div className="flex gap-2">
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">SQLite</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">PostgreSQL</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">SQLite</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">PostgreSQL</span>
                     </div>
                     <div>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Mongo</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Mongo</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Tools */}
-              <div className="border border-[#abb2bf] bg-[#1c2421] sm:col-span-2 lg:col-span-1">
-                <div className="p-2 border-b border-[#abb2bf]">
-                  <h3 className="text-white text-base font-semibold font-['Fira_Code']">Tools</h3>
+              <div className="border border-[var(--border-color)] bg-[var(--bg-primary)] sm:col-span-2 lg:col-span-1">
+                <div className="p-2 border-b border-[var(--border-color)]">
+                  <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Tools</h3>
                 </div>
                 <div className="p-2">
                   <div className="flex flex-col gap-2">
                     <div className="flex gap-2">
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">VSCode</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Neovim</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Linux</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">VSCode</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Neovim</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Linux</span>
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Figma</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">XFCE</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Arch</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Figma</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">XFCE</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Arch</span>
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Git</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Font Awesome</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Git</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Font Awesome</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Other */}
-              <div className="border border-[#abb2bf] bg-[#1c2421] sm:col-span-1 lg:col-span-2">
-                <div className="p-2 border-b border-[#abb2bf]">
-                  <h3 className="text-white text-base font-semibold font-['Fira_Code']">Other</h3>
+              <div className="border border-[var(--border-color)] bg-[var(--bg-primary)] sm:col-span-1 lg:col-span-2">
+                <div className="p-2 border-b border-[var(--border-color)]">
+                  <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Other</h3>
                 </div>
                 <div className="p-2">
                   <div className="flex flex-col gap-2">
                     <div className="flex gap-2">
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">HTML</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">CSS</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">EJS</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">SCSS</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">HTML</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">CSS</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">EJS</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">SCSS</span>
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">REST</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Jinja</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">REST</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Jinja</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Frameworks */}
-              <div className="border border-[#abb2bf] bg-[#1c2421] sm:col-span-2 lg:col-span-1">
-                <div className="p-2 border-b border-[#abb2bf]">
-                  <h3 className="text-white text-base font-semibold font-['Fira_Code']">Frameworks</h3>
+              <div className="border border-[var(--border-color)] bg-[var(--bg-primary)] sm:col-span-2 lg:col-span-1">
+                <div className="p-2 border-b border-[var(--border-color)]">
+                  <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Frameworks</h3>
                 </div>
                 <div className="p-2">
                   <div className="flex flex-col gap-2">
                     <div className="flex gap-2">
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">React</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Vue</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">React</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Vue</span>
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Disnake</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Discord.js</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Disnake</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Discord.js</span>
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Flask</span>
-                      <span className="text-[#abb2bf] text-base font-normal font-['Fira_Code']">Express.js</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Flask</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Express.js</span>
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,9 @@
 import React from 'react';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const SkillsSection = () => {
+  const [headerRef, headerVisible] = useScrollAnimation();
+  
   const skillCategories = [
     {
       title: 'Languages',
@@ -43,12 +46,17 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-[#1c2421] py-12 sm:py-16 lg:py-20">
+    <section className="w-full bg-[var(--bg-primary)] py-12 sm:py-16 lg:py-20">
       <div className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px]">
         {/* Section Header */}
-        <div className="flex items-center gap-2 mb-8 sm:mb-12">
-          <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-[#c778dd] font-['Fira_Code']">#</span>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-white font-['Fira_Code']">skills</h2>
+        <div 
+          ref={headerRef}
+          className={`flex items-center gap-2 mb-8 sm:mb-12 ${
+            headerVisible ? 'animate-fade-in-left' : 'opacity-0'
+          }`}
+        >
+          <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-[var(--text-accent)] font-['Fira_Code']">#</span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-[var(--text-primary)] font-['Fira_Code']">skills</h2>
         </div>
 
         {/* Skills Grid */}
@@ -56,11 +64,11 @@ const SkillsSection = () => {
           {skillCategories?.map((category, categoryIndex) => (
             <div 
               key={categoryIndex}
-              className="border border-[#abb2bf]"
+              className="border border-[var(--border-color)]"
             >
               {/* Category Header */}
-              <div className="px-2 py-2 border-b border-[#abb2bf]">
-                <h3 className="text-base font-semibold text-white font-['Fira_Code']">
+              <div className="px-2 py-2 border-b border-[var(--border-color)]">
+                <h3 className="text-base font-semibold text-[var(--text-primary)] font-['Fira_Code']">
                   {category?.title}
                 </h3>
               </div>
@@ -72,11 +80,11 @@ const SkillsSection = () => {
                     {skillRow?.map((skill, skillIndex) => (
                       <span 
                         key={skillIndex}
-                        className="text-sm text-[#abb2bf] font-['Fira_Code']"
+                        className="text-sm text-[var(--text-secondary)] font-['Fira_Code']"
                       >
                         {skill}
                         {skillIndex < skillRow?.length - 1 && (
-                          <span className="ml-2 text-[#abb2bf]">•</span>
+                          <span className="ml-2 text-[var(--text-secondary)]">•</span>
                         )}
                       </span>
                     ))}

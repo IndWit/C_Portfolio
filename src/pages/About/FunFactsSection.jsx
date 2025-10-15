@@ -1,7 +1,10 @@
 import React from 'react';
 import ChipView from '../../components/ui/ChipView';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const FunFactsSection = () => {
+  const [headerRef, headerVisible] = useScrollAnimation();
+  
   const funFacts = [
     'I like winter more than summer',
     'I often bike with my friends',
@@ -13,7 +16,7 @@ const FunFactsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-[#1c2421] py-12 sm:py-16 lg:py-20">
+    <section className="w-full bg-[var(--bg-primary)] py-12 sm:py-16 lg:py-20">
       <div className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px]">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16">
           {/* Left Side - Decorative Image */}
@@ -28,9 +31,14 @@ const FunFactsSection = () => {
           {/* Center Content */}
           <div className="w-full lg:flex-1 order-1 lg:order-2">
             {/* Section Header */}
-            <div className="flex items-center gap-2 mb-6 sm:mb-8">
-              <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-[#c778dd] font-['Fira_Code']">#</span>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-white font-['Fira_Code']">my-fun-facts</h2>
+            <div 
+              ref={headerRef}
+              className={`flex items-center gap-2 mb-6 sm:mb-8 ${
+                headerVisible ? 'animate-fade-in-left' : 'opacity-0'
+              }`}
+            >
+              <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-[var(--text-accent)] font-['Fira_Code']">#</span>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-[var(--text-primary)] font-['Fira_Code']">my-fun-facts</h2>
             </div>
 
             {/* Fun Facts Chips */}
