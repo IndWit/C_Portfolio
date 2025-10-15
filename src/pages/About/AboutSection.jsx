@@ -2,12 +2,12 @@ import React from 'react';
 
 const AboutSection = () => {
   return (
-    <section className="w-full bg-[#1c2421]">
+    <section className="w-full bg-[var(--bg-primary)]">
       <div className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px]">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16 py-8 sm:py-12 lg:py-16">
           {/* Text Content */}
           <div className="w-full lg:w-1/2 order-2 lg:order-1">
-            <p className="text-sm sm:text-base leading-6 sm:leading-7 text-[#abb2bf] font-normal font-['Fira_Code']">
+            <p className="text-sm sm:text-base leading-6 sm:leading-7 text-[var(--text-secondary)] font-normal font-['Fira_Code']">
               Hello, I am Elias!
               <br /><br />
               I am a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.

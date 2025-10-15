@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ThemeToggle from '../../components/common/ThemeToggle';
 
 const HeroSection = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <section className="w-full bg-[#1c2421]">
+    <section className="w-full bg-[var(--bg-primary)]">
       <div className="w-full max-w-[1366px] mx-auto">
         {/* Sidebar */}
-        <div className="fixed left-0 top-0 h-full w-[49px] bg-[#1c2421] border-r border-[#abb2bf] z-10 hidden lg:flex flex-col justify-between items-center py-4">
-          <div className="w-[1px] h-[190px] bg-[#abb2bf]"></div>
+        <div className="fixed left-0 top-0 h-full w-[49px] bg-[var(--sidebar-bg)] border-r border-[var(--border-color)] z-10 hidden lg:flex flex-col justify-between items-center py-4">
+          <div className="w-[1px] h-[190px] bg-[var(--border-color)]"></div>
           <div className="flex flex-col gap-2">
             <img src="/images/img_github.svg" className="w-8 h-8" alt="GitHub" />
             <img src="/images/img_dribble.svg" className="w-8 h-8" alt="Dribbble" />
@@ -18,37 +19,38 @@ const HeroSection = () => {
         </div>
 
         {/* Header */}
-        <header className="w-full bg-[#1c2421] border-b border-[#abb2bf] relative z-20">
+        <header className="w-full bg-[var(--bg-primary)] border-b border-[var(--border-color)] relative z-20">
           <div className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px]">
             <div className="flex justify-between items-center py-4">
               {/* Logo */}
               <div className="flex items-center gap-2">
                 <img src="/images/img_union_white_a700.svg" className="w-4 h-4" alt="Logo" />
-                <span className="text-white font-bold text-base font-['Fira_Code']">Elias</span>
+                <span className="text-[var(--text-primary)] font-bold text-base font-['Fira_Code']">Elias</span>
               </div>
 
               {/* Desktop Navigation */}
               <nav className="hidden lg:flex items-center gap-4">
                 <div className="flex items-center">
-                  <span className="text-[#c778dd] font-medium text-base font-['Fira_Code']">#</span>
-                  <span className="text-white font-medium text-base font-['Fira_Code']">home</span>
+                  <span className="text-[var(--text-accent)] font-medium text-base font-['Fira_Code']">#</span>
+                  <span className="text-[var(--text-primary)] font-medium text-base font-['Fira_Code']">home</span>
                 </div>
-                <div className="flex items-center">
-                  <span className="text-[#c778dd] font-normal text-base font-['Fira_Code']">#</span>
-                  <span className="text-[#abb2bf] font-normal text-base font-['Fira_Code']">works</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#c778dd] font-normal text-base font-['Fira_Code']">#</span>
-                  <span className="text-[#abb2bf] font-normal text-base font-['Fira_Code']">about-me</span>
-                </div>
-                <Link to="/contacts" className="flex items-center">
-                  <span className="text-[#c778dd] font-normal text-base font-['Fira_Code']">#</span>
-                  <span className="text-[#abb2bf] font-normal text-base font-['Fira_Code']">contacts</span>
+                <Link to="/projects" className="flex items-center">
+                  <span className="text-[var(--text-accent)] font-normal text-base font-['Fira_Code']">#</span>
+                  <span className="text-[var(--text-secondary)] font-normal text-base font-['Fira_Code']">works</span>
                 </Link>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#abb2bf] font-semibold text-base font-['Fira_Code']">EN</span>
+                <Link to="/about" className="flex items-center">
+                  <span className="text-[var(--text-accent)] font-normal text-base font-['Fira_Code']">#</span>
+                  <span className="text-[var(--text-secondary)] font-normal text-base font-['Fira_Code']">about-me</span>
+                </Link>
+                <Link to="/contact" className="flex items-center">
+                  <span className="text-[var(--text-accent)] font-normal text-base font-['Fira_Code']">#</span>
+                  <span className="text-[var(--text-secondary)] font-normal text-base font-['Fira_Code']">contacts</span>
+                </Link>
+                {/* <div className="flex items-center gap-2">
+                  <span className="text-[var(--text-secondary)] font-semibold text-base font-['Fira_Code']">EN</span>
                   <img src="/images/img_group_58_blue_gray_200.svg" className="w-[10px] h-[5px]" alt="Language" />
-                </div>
+                </div> */}
+                <ThemeToggle />
               </nav>
 
               {/* Mobile Menu Button */}
@@ -58,9 +60,9 @@ const HeroSection = () => {
                 aria-label="Toggle menu"
               >
                 <div className="w-6 h-6 flex flex-col justify-center items-center">
-                  <span className="w-5 h-0.5 bg-white mb-1"></span>
-                  <span className="w-5 h-0.5 bg-white mb-1"></span>
-                  <span className="w-5 h-0.5 bg-white"></span>
+                  <span className="w-5 h-0.5 bg-[var(--text-primary)] mb-1"></span>
+                  <span className="w-5 h-0.5 bg-[var(--text-primary)] mb-1"></span>
+                  <span className="w-5 h-0.5 bg-[var(--text-primary)]"></span>
                 </div>
               </button>
             </div>
@@ -69,21 +71,25 @@ const HeroSection = () => {
             <nav className={`${menuOpen ? 'block' : 'hidden'} lg:hidden pb-4`}>
               <div className="flex flex-col gap-4">
                 <div className="flex items-center">
-                  <span className="text-[#c778dd] font-medium text-base font-['Fira_Code']">#</span>
-                  <span className="text-white font-medium text-base font-['Fira_Code']">home</span>
+                  <span className="text-[var(--text-accent)] font-medium text-base font-['Fira_Code']">#</span>
+                  <span className="text-[var(--text-primary)] font-medium text-base font-['Fira_Code']">home</span>
                 </div>
-                <div className="flex items-center">
-                  <span className="text-[#c778dd] font-normal text-base font-['Fira_Code']">#</span>
-                  <span className="text-[#abb2bf] font-normal text-base font-['Fira_Code']">works</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#c778dd] font-normal text-base font-['Fira_Code']">#</span>
-                  <span className="text-[#abb2bf] font-normal text-base font-['Fira_Code']">about-me</span>
-                </div>
-                <Link to="/contacts" className="flex items-center">
-                  <span className="text-[#c778dd] font-normal text-base font-['Fira_Code']">#</span>
-                  <span className="text-[#abb2bf] font-normal text-base font-['Fira_Code']">contacts</span>
+                <Link to="/projects" className="flex items-center">
+                  <span className="text-[var(--text-accent)] font-normal text-base font-['Fira_Code']">#</span>
+                  <span className="text-[var(--text-secondary)] font-normal text-base font-['Fira_Code']">works</span>
                 </Link>
+                <Link to="/about" className="flex items-center">
+                  <span className="text-[var(--text-accent)] font-normal text-base font-['Fira_Code']">#</span>
+                  <span className="text-[var(--text-secondary)] font-normal text-base font-['Fira_Code']">about-me</span>
+                </Link>
+                <Link to="/contact" className="flex items-center">
+                  <span className="text-[var(--text-accent)] font-normal text-base font-['Fira_Code']">#</span>
+                  <span className="text-[var(--text-secondary)] font-normal text-base font-['Fira_Code']">contacts</span>
+                </Link>
+                <div className="flex items-center justify-between mt-2">
+                  <span className="text-[var(--text-secondary)] font-semibold text-base font-['Fira_Code']">Theme:</span>
+                  <ThemeToggle />
+                </div>
               </div>
             </nav>
           </div>
@@ -95,18 +101,18 @@ const HeroSection = () => {
             {/* Left Content */}
             <div className="flex-1 lg:w-[46%]">
               <div className="flex flex-col gap-7">
-                <h1 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-semibold leading-[26px] sm:leading-[31px] md:leading-[36px] lg:leading-[41px] text-white font-['Fira_Code']">
-                  <span className="text-white">Elias is a </span>
-                  <span className="text-[#c778dd]">web designer</span>
-                  <span className="text-white"> and </span>
-                  <span className="text-[#c778dd]">front-end developer</span>
+                <h1 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-semibold leading-[26px] sm:leading-[31px] md:leading-[36px] lg:leading-[41px] text-[var(--text-primary)] font-['Fira_Code']">
+                  <span className="text-[var(--text-primary)]">Elias is a </span>
+                  <span className="text-[var(--text-accent)]">web designer</span>
+                  <span className="text-[var(--text-primary)]"> and </span>
+                  <span className="text-[var(--text-accent)]">front-end developer</span>
                 </h1>
                 
-                <p className="text-sm sm:text-base leading-[20px] sm:leading-[25px] text-[#abb2bf] font-['Fira_Code'] font-normal">
+                <p className="text-sm sm:text-base leading-[20px] sm:leading-[25px] text-[var(--text-secondary)] font-['Fira_Code'] font-normal">
                   He crafts responsive websites where technologies meet creativity
                 </p>
                 
-                <button className="border border-[#c778dd] px-4 py-2 text-white font-medium text-base font-['Fira_Code'] w-fit hover:bg-[#c778dd] hover:bg-opacity-10 transition-colors">
+                <button className="border border-[var(--text-accent)] px-4 py-2 text-[var(--text-primary)] font-medium text-base font-['Fira_Code'] w-fit hover:bg-[var(--text-accent)] hover:bg-opacity-10 transition-colors">
                   Contact me!!
                 </button>
               </div>
@@ -129,7 +135,13 @@ const HeroSection = () => {
                     {[...Array(5)]?.map((_, rowIndex) => (
                       <div key={rowIndex} className="flex gap-4">
                         {[...Array(5)]?.map((_, colIndex) => (
-                          <div key={colIndex} className="w-1 h-1 bg-[#abb2bf] rounded-sm"></div>
+                          <div 
+                            key={colIndex} 
+                            className="w-1 h-1 bg-[var(--border-color)] rounded-sm animate-pulse-glow"
+                            style={{
+                              animationDelay: `${(rowIndex + colIndex) * 0.1}s`
+                            }}
+                          ></div>
                         ))}
                       </div>
                     ))}
@@ -137,12 +149,12 @@ const HeroSection = () => {
                 </div>
 
                 {/* Status Box */}
-                <div className="mt-8 lg:mt-0 lg:absolute lg:bottom-0 lg:left-8 border border-[#abb2bf] bg-[#1c2421] p-4 max-w-[400px]">
+                <div className="mt-8 lg:mt-0 lg:absolute lg:bottom-0 lg:left-8 border border-[var(--border-color)] bg-[var(--bg-primary)] p-4 max-w-[400px] animate-float">
                   <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 bg-[#c778dd] border border-[#c778dd]"></div>
-                    <span className="text-[#abb2bf] font-normal text-base font-['Fira_Code']">
+                    <div className="w-4 h-4 bg-[var(--text-accent)] border border-[var(--text-accent)] animate-pulse-glow"></div>
+                    <span className="text-[var(--text-secondary)] font-normal text-base font-['Fira_Code']">
                       <span className="font-medium">Currently working on </span>
-                      <span className="font-semibold text-white">Portfolio</span>
+                      <span className="font-semibold text-[var(--text-primary)]">Portfolio</span>
                     </span>
                   </div>
                 </div>
@@ -156,13 +168,13 @@ const HeroSection = () => {
           <div className="flex flex-col items-center gap-8">
             <div className="relative max-w-[712px] mx-auto">
               {/* Quote Icon Top */}
-              <div className="absolute -top-4 left-2 bg-[#1c2421] p-1">
+              <div className="absolute -top-4 left-2 bg-[var(--bg-primary)] p-1">
                 <img src="/images/img_.svg" className="w-6 h-5" alt="Quote" />
               </div>
               
               {/* Quote Content */}
-              <div className="border border-[#abb2bf] bg-[#1c2421] p-6 text-center">
-                <p className="text-[18px] sm:text-[20px] md:text-[24px] font-medium leading-[24px] sm:leading-[28px] md:leading-[32px] text-[#fb1010] font-['Fira_Code']">
+              <div className="border border-[var(--border-color)] bg-[var(--bg-primary)] p-6 text-center">
+                <p className="text-[18px] sm:text-[20px] md:text-[24px] font-medium leading-[24px] sm:leading-[28px] md:leading-[32px] text-[var(--text-primary)] font-['Fira_Code']">
                   With great power comes great electricity bill
                 </p>
               </div>
@@ -170,11 +182,11 @@ const HeroSection = () => {
               {/* Author */}
               <div className="flex justify-end mt-4">
                 <div className="relative">
-                  <div className="absolute -top-3 right-4 bg-[#1c2421] p-1">
+                  <div className="absolute -top-3 right-4 bg-[var(--bg-primary)] p-1">
                     <img src="/images/img_.svg" className="w-6 h-5" alt="Quote" />
                   </div>
-                  <div className="border border-[#abb2bf] px-3 py-2">
-                    <span className="text-[18px] sm:text-[20px] md:text-[24px] font-normal leading-[24px] sm:leading-[28px] md:leading-[32px] text-[#fb1010] font-['Fira_Code']">
+                  <div className="border border-[var(--border-color)] px-3 py-2">
+                    <span className="text-[18px] sm:text-[20px] md:text-[24px] font-normal leading-[24px] sm:leading-[28px] md:leading-[32px] text-[var(--text-primary)] font-['Fira_Code']">
                       - Dr. Who
                     </span>
                   </div>

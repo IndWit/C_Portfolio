@@ -4,6 +4,8 @@ import HeroSection from './HeroSection';
 import ProjectsSection from './ProjectsSection';
 import SkillsSection from './SkillsSection';
 import AboutSection from './AboutSection';
+import InfiniteScroll from '../../components/common/InfiniteScroll';
+import CodeTypingEffect from '../../components/common/CodeTypingEffect';
 
 const Home = () => {
   return (
@@ -15,9 +17,11 @@ const Home = () => {
         <meta property="og:description" content="Elias is a skilled web designer and front-end developer crafting responsive websites where technologies meet creativity. View projects, skills, and contact information." />
       </Helmet>
 
-      <main className="bg-[#1c2421] min-h-screen">
+      <main className="bg-[var(--bg-primary)] min-h-screen">
         <HeroSection />
+        <InfiniteScroll />
         <ProjectsSection />
+        <CodeTypingEffect />
         <SkillsSection />
         <AboutSection />
       </main>

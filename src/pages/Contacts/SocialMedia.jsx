@@ -1,12 +1,20 @@
 import React from 'react';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const SocialMedia = () => {
+  const [headerRef, headerVisible] = useScrollAnimation();
+  
   return (
     <div className="flex flex-col gap-5 w-full">
       {/* Section Title */}
-      <div className="flex items-center gap-0 mt-22">
-        <span className="text-xl font-medium leading-xl text-text-secondary">#</span>
-        <span className="text-xl font-medium leading-xl text-text-accent">all-media</span>
+      <div 
+        ref={headerRef}
+        className={`flex items-center gap-0 mt-22 ${
+          headerVisible ? 'animate-fade-in-left' : 'opacity-0'
+        }`}
+      >
+        <span className="text-xl font-medium leading-xl text-[var(--text-accent)] font-['Fira_Code']">#</span>
+        <span className="text-xl font-medium leading-xl text-[var(--text-primary)] font-['Fira_Code']">all-media</span>
       </div>
 
       {/* Social Links */}
@@ -18,7 +26,7 @@ const SocialMedia = () => {
             alt="Twitter" 
             className="w-[32px] h-[32px]"
           />
-          <span className="text-base font-normal leading-sm text-text-primary ml-1">
+          <span className="text-base font-normal leading-sm text-[var(--text-secondary)] ml-1 font-['Fira_Code']">
             @elias
           </span>
         </div>
@@ -30,7 +38,7 @@ const SocialMedia = () => {
             alt="Twitter" 
             className="w-[32px] h-[32px]"
           />
-          <span className="text-base font-normal leading-sm text-text-primary ml-1">
+          <span className="text-base font-normal leading-sm text-[var(--text-secondary)] ml-1 font-['Fira_Code']">
             @elias
           </span>
         </div>
