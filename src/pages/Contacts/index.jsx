@@ -109,7 +109,27 @@ const ContactsPage = () => {
           </div>
         </header>
         
-        <main className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px] py-8 lg:py-16">
+        <main className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px] py-8 lg:py-16 relative">
+          {/* Decorative Background Elements */}
+          <div className="absolute top-20 right-0 hidden lg:block opacity-20">
+            <div className="flex flex-col gap-4">
+              {[...Array(5)]?.map((_, rowIndex) => (
+                <div key={rowIndex} className="flex gap-4">
+                  {[...Array(5)]?.map((_, colIndex) => (
+                    <div 
+                      key={colIndex} 
+                      className="w-1 h-1 bg-[var(--border-color)] rounded-sm"
+                    ></div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="absolute bottom-40 left-0 hidden lg:block opacity-20">
+            <div className="w-20 h-20 border border-[var(--border-color)]"></div>
+          </div>
+
           {/* Page Title Section */}
           <section className="w-full bg-[var(--bg-primary)] py-8 sm:py-12">
             <div className="flex flex-col gap-3 sm:gap-4">
@@ -122,8 +142,13 @@ const ContactsPage = () => {
           </section>
 
           {/* Contact Content */}
-          <section className="flex flex-col lg:flex-row gap-8 lg:gap-16 mt-8">
-            <div className="flex flex-col w-full lg:w-[46%]">
+          <section className="flex flex-col lg:flex-row gap-8 lg:gap-16 mt-8 relative">
+            {/* Background decorative element */}
+            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 hidden lg:block opacity-10">
+              <div className="text-[150px] font-bold text-[var(--text-accent)] font-['Fira_Code']">&lt;/&gt;</div>
+            </div>
+
+            <div className="flex flex-col w-full lg:w-[46%] relative z-10">
               {/* Description */}
               <p className="text-base font-medium leading-md text-[var(--text-secondary)] w-full lg:w-[90%] mb-12 font-['Fira_Code']">
                 I am interested in freelance opportunities. However, if you have other request or question, do not hesitate to contact me
@@ -134,8 +159,50 @@ const ContactsPage = () => {
             </div>
 
             {/* Contact Cards Section */}
-            <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 w-full lg:flex-1 lg:justify-end lg:items-start">
+            <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 w-full lg:flex-1 lg:justify-end lg:items-start relative z-10">
               <ContactInfo />
+            </div>
+          </section>
+
+          {/* Additional Background Elements */}
+          <section className="mt-16 lg:mt-24 relative">
+            {/* Decorative dots grid */}
+            <div className="absolute top-0 right-20 hidden lg:block opacity-15">
+              <div className="flex flex-col gap-3">
+                {[...Array(4)]?.map((_, rowIndex) => (
+                  <div key={rowIndex} className="flex gap-3">
+                    {[...Array(4)]?.map((_, colIndex) => (
+                      <div 
+                        key={colIndex} 
+                        className="w-1.5 h-1.5 bg-[var(--text-accent)] rounded-sm animate-pulse-glow"
+                        style={{
+                          animationDelay: `${(rowIndex + colIndex) * 0.2}s`
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Large decorative bracket */}
+            <div className="absolute -bottom-20 left-10 hidden lg:block opacity-10">
+              <div className="text-[200px] font-bold text-[var(--border-color)] font-['Fira_Code']">{'{'}</div>
+            </div>
+
+            {/* Quote Section */}
+            <div className="max-w-2xl mx-auto text-center relative z-10">
+              <div className="border border-[var(--border-color)] p-8">
+                <p className="text-xl font-medium text-[var(--text-primary)] font-['Fira_Code'] mb-4">
+                  "Talk is cheap. Show me the code."
+                </p>
+                <span className="text-[var(--text-secondary)] font-['Fira_Code']">- Linus Torvalds</span>
+              </div>
+            </div>
+
+            {/* Decorative corner element */}
+            <div className="absolute top-10 left-0 hidden lg:block opacity-20">
+              <div className="w-16 h-16 border-t-2 border-l-2 border-[var(--text-accent)]"></div>
             </div>
           </section>
         </main>

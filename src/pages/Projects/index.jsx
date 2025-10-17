@@ -107,7 +107,31 @@ const Projects = () => {
           </div>
         </header>
         
-        <main className="w-full">
+        <main className="w-full relative">
+          {/* Decorative Background Elements */}
+          <div className="absolute top-40 right-10 hidden lg:block opacity-15">
+            <div className="flex flex-col gap-4">
+              {[...Array(5)]?.map((_, rowIndex) => (
+                <div key={rowIndex} className="flex gap-4">
+                  {[...Array(5)]?.map((_, colIndex) => (
+                    <div 
+                      key={colIndex} 
+                      className="w-1 h-1 bg-[var(--border-color)] rounded-sm"
+                    ></div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="absolute top-1/3 left-0 hidden lg:block opacity-10">
+            <div className="text-[180px] font-bold text-[var(--text-accent)] font-['Fira_Code']">&#123;&#125;</div>
+          </div>
+
+          <div className="absolute bottom-40 right-20 hidden lg:block opacity-20">
+            <div className="w-24 h-24 border border-[var(--border-color)]"></div>
+          </div>
+
           {/* Page Header Section */}
           <section className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px] pt-[52px] pb-[42px]">
             <div className="w-full">
@@ -128,7 +152,7 @@ const Projects = () => {
           </section>
 
           {/* Main Content Area */}
-          <div className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px] pb-[42px]">
+          <div className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px] pb-[42px] relative z-10">
             <div className="w-full">
               <div className="flex flex-col gap-[48px]">
                 

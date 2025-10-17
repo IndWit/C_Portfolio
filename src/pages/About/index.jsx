@@ -110,9 +110,40 @@ const About = () => {
           </div>
         </header>
         
-        <main>
+        <main className="relative">
+          {/* Decorative Background Elements */}
+          <div className="absolute top-20 right-0 hidden lg:block opacity-15">
+            <div className="flex flex-col gap-3">
+              {[...Array(6)]?.map((_, rowIndex) => (
+                <div key={rowIndex} className="flex gap-3">
+                  {[...Array(6)]?.map((_, colIndex) => (
+                    <div 
+                      key={colIndex} 
+                      className="w-1 h-1 bg-[var(--border-color)] rounded-sm animate-pulse-glow"
+                      style={{
+                        animationDelay: `${(rowIndex + colIndex) * 0.15}s`
+                      }}
+                    ></div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="absolute top-1/4 left-10 hidden lg:block opacity-10">
+            <div className="text-[150px] font-bold text-[var(--text-accent)] font-['Fira_Code']">&lt;/&gt;</div>
+          </div>
+
+          <div className="absolute bottom-60 right-10 hidden lg:block opacity-20">
+            <div className="w-20 h-20 border-2 border-[var(--border-color)] rounded-full"></div>
+          </div>
+
+          <div className="absolute top-2/3 left-0 hidden lg:block opacity-10">
+            <div className="w-16 h-16 border-t-2 border-l-2 border-[var(--text-accent)]"></div>
+          </div>
+
           {/* Page Title Section */}
-          <section className="w-full bg-[var(--bg-primary)] py-8 sm:py-12">
+          <section className="w-full bg-[var(--bg-primary)] py-8 sm:py-12 relative z-10">
             <div className="w-full max-w-[1194px] mx-auto px-4 lg:px-0 lg:ml-[171px]">
               <div className="flex flex-col gap-3 sm:gap-4">
                 <div className="flex items-center gap-2">
