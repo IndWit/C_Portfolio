@@ -8,11 +8,13 @@ const AboutSection = () => {
           {/* Text Content */}
           <div className="w-full lg:w-1/2 order-2 lg:order-1">
             <p className="text-sm sm:text-base leading-6 sm:leading-7 text-[var(--text-secondary)] font-normal font-['Fira_Code']">
-              Hello, I am Elias!
+              Hello, I'm Induma!
               <br /><br />
-              I am a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.
+              I am a results-driven Computing and Information Systems undergraduate with hands-on experience in web and mobile development. 
+              I build responsive and modern web frontends, as well as mobile applications, turning ideas into seamless digital experiences.
               <br /><br />
-              Transforming my creativity and knowledge into a websites has been my passion for over a year. I have been helping various clients to establish their presence online. I always strive to learn about the newest technologies and frameworks.
+              A creative problem solver with a keen design sense, I thrive in collaborative environments and enjoy learning emerging technologies. 
+              I am passionate about crafting innovative, impactful software solutions while continuously growing as a forward-thinking developer.
             </p>
           </div>
 
@@ -21,7 +23,7 @@ const AboutSection = () => {
             <div className="relative w-full max-w-[342px] mx-auto">
               {/* Main Image */}
               <img 
-                src="/images/img_image_506x338.png" 
+                src="/images/gg.png" 
                 alt="Elias - Front-end Developer"
                 className="w-full h-auto rounded-lg"
               />
@@ -32,7 +34,7 @@ const AboutSection = () => {
                   {Array.from({ length: 25 })?.map((_, index) => (
                     <div 
                       key={index}
-                      className="w-1 h-1 bg-[#abb2bf] rounded-sm"
+                      className="w-1 h-1 bg-[var(--border-color)] rounded-sm"
                     />
                   ))}
                 </div>
@@ -44,7 +46,7 @@ const AboutSection = () => {
                   {Array.from({ length: 20 })?.map((_, index) => (
                     <div 
                       key={index}
-                      className="w-1 h-1 bg-[#abb2bf] rounded-sm"
+                      className="w-1 h-1 bg-[var(--border-color)] rounded-sm"
                     />
                   ))}
                 </div>

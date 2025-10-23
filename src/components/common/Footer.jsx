@@ -15,9 +15,9 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <div className="flex items-center gap-2">
                 <img 
-                  src="/images/img_union.svg" 
+                  src="/images/indw.png" 
                   alt="Logo icon" 
-                  className="w-[16px] h-[16px]"
+                  className="w-[48px] h-[48px]"
                 />
                 <span className="text-base font-medium leading-sm text-text-accent ml-2">
                   Elias

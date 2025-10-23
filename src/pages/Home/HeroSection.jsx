@@ -24,8 +24,8 @@ const HeroSection = () => {
             <div className="flex justify-between items-center py-4">
               {/* Logo */}
               <div className="flex items-center gap-2">
-                <img src="/images/img_union_white_a700.svg" className="w-4 h-4" alt="Logo" />
-                <span className="text-[var(--text-primary)] font-bold text-base font-['Fira_Code']">Elias</span>
+                <img src="/images/indw.png" className="w-12 h-12" alt="Logo" />
+                <span className="text-[var(--text-primary)] font-bold text-base font-['Fira_Code']">IndWit</span>
               </div>
 
               {/* Desktop Navigation */}
@@ -102,14 +102,14 @@ const HeroSection = () => {
             <div className="flex-1 lg:w-[46%]">
               <div className="flex flex-col gap-7">
                 <h1 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-semibold leading-[26px] sm:leading-[31px] md:leading-[36px] lg:leading-[41px] text-[var(--text-primary)] font-['Fira_Code']">
-                  <span className="text-[var(--text-primary)]">Elias is a </span>
-                  <span className="text-[var(--text-accent)]">web designer</span>
-                  <span className="text-[var(--text-primary)]"> and </span>
-                  <span className="text-[var(--text-accent)]">front-end developer</span>
+                  <span className="text-[var(--text-primary)]">Induma crafts digital experiences as a</span>
+                  <span className="text-[var(--text-accent)]"> Web & mobile developer</span>
+                  <span className="text-[var(--text-primary)]"> fueled by innovation and</span>
+                  <span className="text-[var(--text-accent)]"> DevOps passion.</span>
                 </h1>
                 
                 <p className="text-sm sm:text-base leading-[20px] sm:leading-[25px] text-[var(--text-secondary)] font-['Fira_Code'] font-normal">
-                  He crafts responsive websites where technologies meet creativity
+                  He crafts digital experiences that connect design, code, and DevOps magic.
                 </p>
                 
                 <button className="border border-[var(--text-accent)] px-4 py-2 text-[var(--text-primary)] font-medium text-base font-['Fira_Code'] w-fit hover:bg-[var(--text-accent)] hover:bg-opacity-10 transition-colors">
@@ -123,7 +123,7 @@ const HeroSection = () => {
               <div className="relative">
                 {/* Main Image */}
                 <div className="relative w-full max-w-[456px] mx-auto">
-                  <img src="/images/img_image.png" className="w-full h-auto" alt="Elias" />
+                  <img src="/images/dp.png" className="w-full h-auto" alt="Elias" />
                   
                   {/* Logo Overlay */}
                   <div className="absolute top-[84px] left-1/2 transform -translate-x-1/2">
@@ -154,7 +154,7 @@ const HeroSection = () => {
                     <div className="w-4 h-4 bg-[var(--text-accent)] border border-[var(--text-accent)] animate-pulse-glow"></div>
                     <span className="text-[var(--text-secondary)] font-normal text-base font-['Fira_Code']">
                       <span className="font-medium">Currently working on </span>
-                      <span className="font-semibold text-[var(--text-primary)]">Portfolio</span>
+                      <span className="font-semibold text-[var(--text-primary)]">.....</span>
                     </span>
                   </div>
                 </div>
@@ -175,7 +175,7 @@ const HeroSection = () => {
               {/* Quote Content */}
               <div className="border border-[var(--border-color)] bg-[var(--bg-primary)] p-6 text-center">
                 <p className="text-[18px] sm:text-[20px] md:text-[24px] font-medium leading-[24px] sm:leading-[28px] md:leading-[32px] text-[var(--text-primary)] font-['Fira_Code']">
-                  With great power comes great electricity bill
+                  Code is like humor. When you have to explain it, it’s bad
                 </p>
               </div>
               
@@ -187,7 +187,7 @@ const HeroSection = () => {
                   </div>
                   <div className="border border-[var(--border-color)] px-3 py-2">
                     <span className="text-[18px] sm:text-[20px] md:text-[24px] font-normal leading-[24px] sm:leading-[28px] md:leading-[32px] text-[var(--text-primary)] font-['Fira_Code']">
-                      - Dr. Who
+                      - Cory House
                     </span>
                   </div>
                 </div>

@@ -36,8 +36,8 @@ const Projects = () => {
             <div className="flex justify-between items-center py-4">
               {/* Logo */}
               <div className="flex items-center gap-2">
-                <img src="/images/img_union_white_a700.svg" className="w-4 h-4" alt="Logo" />
-                <span className="text-[var(--text-primary)] font-bold text-base font-['Fira_Code']">Elias</span>
+                <img src="/images/indw.png" className="w-12 h-12" alt="Logo" />
+                <span className="text-[var(--text-primary)] font-bold text-base font-['Fira_Code']">IndWit</span>
               </div>
 
               {/* Desktop Navigation */}
