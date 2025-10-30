@@ -5,45 +5,55 @@ const SkillsSection = () => {
   const [headerRef, headerVisible] = useScrollAnimation();
   
   const skillCategories = [
-    {
-      title: 'Languages',
-      skills: [
-        ['TypeScript', 'Lua'],
-        ['Python', 'JavaScript']
-      ]
-    },
-    {
-      title: 'Other',
-      skills: [
-        ['HTML', 'CSS', 'EJS', 'SCSS'],
-        ['REST', 'Jinja']
-      ]
-    },
-    {
-      title: 'Tools',
-      skills: [
-        ['VSCode', 'Neovim', 'Linux'],
-        ['Figma', 'XFCE', 'Arch'],
-        ['Git', 'Font Awesome'],
-        ['KDE', 'fish']
-      ]
-    },
-    {
-      title: 'Databases',
-      skills: [
-        ['SQLite', 'PostgreSQL'],
-        ['Mongo']
-      ]
-    },
-    {
-      title: 'Frameworks',
-      skills: [
-        ['React', 'Vue'],
-        ['Disnake', 'Discord.js'],
-        ['Flask', 'Express.js']
-      ]
-    }
-  ];
+  {
+    title: "Languages",
+    skills: [
+      ["Java", "Go", "PHP"],
+      ["Python", "Dart", "JavaScript"]
+    ]
+  },
+  {
+    title: "Frameworks",
+    skills: [
+      ["ReactJS", "Laravel"],
+      ["Next.js"]
+    ]
+  },
+  {
+    title: "Web Technologies",
+    skills: [
+      ["HTML", "CSS", "Bootstrap"],
+      ["Firebase"]
+    ]
+  },
+  {
+    title: "Mobile Development",
+    skills: [
+      ["Flutter"]
+    ]
+  },
+  {
+    title: "Database Management",
+    skills: [
+      ["SQL Server", "MySQL"],
+      ["MongoDB"]
+    ]
+  },
+  {
+    title: "Design Tools",
+    skills: [
+      ["Figma", "Adobe XD"],
+      ["Photoshop"]
+    ]
+  },
+  {
+    title: "Version Control",
+    skills: [
+      ["Git"]
+    ]
+  }
+];
+
 
   return (
     <section className="w-full bg-[var(--bg-primary)] py-12 sm:py-16 lg:py-20">
@@ -101,7 +111,7 @@ const SkillsSection = () => {
             {Array.from({ length: 25 })?.map((_, index) => (
               <div 
                 key={index}
-                className="w-1 h-1 bg-[#abb2bf] rounded-sm"
+                className="w-1 h-1 bg-[var(--border-color)] rounded-sm"
               />
             ))}
           </div>

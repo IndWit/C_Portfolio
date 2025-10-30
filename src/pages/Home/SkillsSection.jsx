@@ -3,46 +3,60 @@ import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const SkillsSection = () => {
   const [headerRef, headerVisible] = useScrollAnimation();
+  const [gridRef, gridVisible] = useScrollAnimation();
   
   const skillCategories = [
-    {
-      title: "Languages",
-      skills: [
-        ["TypeScript", "Lua"],
-        ["Python", "JavaScript"]
-      ]
-    },
-    {
-      title: "Databases", 
-      skills: [
-        ["SQLite", "PostgreSQL"],
-        ["Mongo"]
-      ]
-    },
-    {
-      title: "Other",
-      skills: [
-        ["HTML", "CSS", "EJS", "SCSS"],
-        ["REST", "Jinja"]
-      ]
-    },
-    {
-      title: "Tools",
-      skills: [
-        ["VSCode", "Neovim", "Linux"],
-        ["Figma", "XFCE", "Arch"],
-        ["Git", "Font Awesome"]
-      ]
-    },
-    {
-      title: "Frameworks",
-      skills: [
-        ["React", "Vue"],
-        ["Disnake", "Discord.js"],
-        ["Flask", "Express.js"]
-      ]
-    }
-  ];
+  {
+    title: "Languages",
+    skills: [
+      ["Java", "Go", "PHP"],
+      ["Python", "Dart", "JavaScript"]
+    ]
+  },
+  {
+    title: "Frameworks",
+    skills: [
+      ["ReactJS", "Laravel"],
+      ["Next.js"]
+    ]
+  },
+  {
+    title: "Web Technologies",
+    skills: [
+      ["HTML", "CSS", "Bootstrap"],
+      ["Firebase"]
+    ]
+  },
+  {
+    title: "Mobile Development",
+    skills: [
+      ["Flutter"]
+    ]
+  },
+  {
+    title: "Database Management",
+    skills: [
+      ["SQL Server", "MySQL"],
+      ["MongoDB"]
+    ]
+  },
+  {
+    title: "Design Tools",
+    skills: [
+      ["Figma", "Adobe XD"],
+      ["Photoshop"]
+    ]
+  },
+  {
+    title: "Version Control",
+    skills: [
+      ["Git"]
+    ]
+  },
+  
+];
+
+
 
   return (
     <section className="w-full bg-[var(--bg-primary)] py-8 lg:py-16">
@@ -71,7 +85,7 @@ const SkillsSection = () => {
               {[...Array(5)]?.map((_, rowIndex) => (
                 <div key={rowIndex} className="flex gap-2">
                   {[...Array(5)]?.map((_, colIndex) => (
-                    <div key={colIndex} className="w-1 h-1 bg-[#abb2bf] rounded-sm"></div>
+                    <div key={colIndex} className="w-1 h-1 bg-[var(--border-color)] rounded-sm"></div>
                   ))}
                 </div>
               ))}
@@ -87,7 +101,7 @@ const SkillsSection = () => {
                   {[...Array(5)]?.map((_, rowIndex) => (
                     <div key={rowIndex} className="flex gap-2">
                       {[...Array(5)]?.map((_, colIndex) => (
-                        <div key={colIndex} className="w-1 h-1 bg-[#abb2bf] rounded-sm"></div>
+                        <div key={colIndex} className="w-1 h-1 bg-[var(--border-color)] rounded-sm"></div>
                       ))}
                     </div>
                   ))}
@@ -102,114 +116,27 @@ const SkillsSection = () => {
             <div className="w-[43px] sm:w-[65px] lg:w-[86px] h-[43px] sm:h-[65px] lg:h-[86px] border border-[var(--border-color)]"></div>
           </div>
 
-          {/* Right Side - Skills Grid */}
-          <div className="lg:w-[68%]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {/* Languages */}
-              <div className="border border-[var(--border-color)] bg-[var(--bg-primary)]">
-                <div className="p-2 border-b border-[var(--border-color)]">
-                  <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Languages</h3>
-                </div>
-                <div className="p-2">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex gap-2">
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">TypeScript</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Lua</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Python</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">JavaScript</span>
+          {/* Right Side - Skills Grid (Dynamic from skillCategories) */}
+          <div className="lg:w-[68%]" ref={gridRef}>
+            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ${gridVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+              {skillCategories.map((category) => (
+                <div key={category.title} className="border border-[var(--border-color)] bg-[var(--bg-primary)]">
+                  <div className="p-2 border-b border-[var(--border-color)]">
+                    <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">{category.title}</h3>
+                  </div>
+                  <div className="p-2">
+                    <div className="flex flex-col gap-2">
+                      {category.skills.map((row, idx) => (
+                        <div key={idx} className="flex flex-wrap gap-2">
+                          {row.map((skill) => (
+                            <span key={skill} className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">{skill}</span>
+                          ))}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Databases */}
-              <div className="border border-[var(--border-color)] bg-[var(--bg-primary)]">
-                <div className="p-2 border-b border-[var(--border-color)]">
-                  <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Databases</h3>
-                </div>
-                <div className="p-2">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex gap-2">
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">SQLite</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">PostgreSQL</span>
-                    </div>
-                    <div>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Mongo</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Tools */}
-              <div className="border border-[var(--border-color)] bg-[var(--bg-primary)] sm:col-span-2 lg:col-span-1">
-                <div className="p-2 border-b border-[var(--border-color)]">
-                  <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Tools</h3>
-                </div>
-                <div className="p-2">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex gap-2">
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">VSCode</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Neovim</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Linux</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Figma</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">XFCE</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Arch</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Git</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Font Awesome</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Other */}
-              <div className="border border-[var(--border-color)] bg-[var(--bg-primary)] sm:col-span-1 lg:col-span-2">
-                <div className="p-2 border-b border-[var(--border-color)]">
-                  <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Other</h3>
-                </div>
-                <div className="p-2">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex gap-2">
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">HTML</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">CSS</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">EJS</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">SCSS</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">REST</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Jinja</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Frameworks */}
-              <div className="border border-[var(--border-color)] bg-[var(--bg-primary)] sm:col-span-2 lg:col-span-1">
-                <div className="p-2 border-b border-[var(--border-color)]">
-                  <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Frameworks</h3>
-                </div>
-                <div className="p-2">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex gap-2">
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">React</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Vue</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Disnake</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Discord.js</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Flask</span>
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Express.js</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

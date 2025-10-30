@@ -34,11 +34,14 @@ const AboutSection = () => {
             <div className="lg:w-[50%]">
               <div className="flex flex-col gap-6">
                 <p className="text-[var(--text-secondary)] text-sm sm:text-base font-normal leading-[20px] sm:leading-[26px] font-['Fira_Code']">
-                  Hello, I am Elias!
+                   Hello, I’m Induma!
                   <br /><br />
-                  I am a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.
+                   I’m a results-driven Computing and Information Systems undergraduate with hands-on experience in both web and mobile development. 
+                  I specialize in full-stack development, data analysis, and effective team coordination, always aiming to deliver high-quality and efficient solutions.
                   <br /><br />
-                  Transforming my creativity and knowledge into a websites has been my passion for over a year. I have been helping various clients to establish their presence online. I always strive to learn about the newest technologies and frameworks.
+                  With strong communication and collaboration skills, I enjoy working in dynamic environments that encourage creativity and innovation. 
+                  A passionate problem solver with a sharp design sense, I’m constantly exploring emerging technologies and building impactful software solutions 
+                  while growing as a forward-thinking developer.
                 </p>
                 
                 <Link to="/about">
@@ -160,7 +163,7 @@ const AboutSection = () => {
               <div className="lg:w-[34%]">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-2">
-                    <img src="/images/img_union.svg" className="w-4 h-4" alt="Logo" />
+                    <img src="/images/indw.png" className="w-12 h-12" alt="Logo" />
                     <span className="text-[var(--text-primary)] text-base font-medium font-['Fira_Code']">Elias</span>
                     <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code'] ml-6">elias@elias-dev.ml</span>
                   </div>

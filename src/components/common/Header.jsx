@@ -12,7 +12,7 @@ const Header = () => {
           <div className="flex-shrink-0">
             <NavLink to="/">
               <img 
-                src="/images/img_header_logo.png" 
+                src="/images/indw.png" 
                 alt="Elias Portfolio Logo" 
                 className="w-[72px] h-[20px]"
               />
