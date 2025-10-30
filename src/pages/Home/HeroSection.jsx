@@ -123,7 +123,7 @@ const HeroSection = () => {
               <div className="relative">
                 {/* Main Image */}
                 <div className="relative w-full max-w-[456px] mx-auto">
-                  <img src="/images/dp.png" className="w-full h-auto" alt="Elias" />
+                  <img src="/images/SE.png" className="w-full h-auto" alt="Elias" />
                   
                   {/* Logo Overlay */}
                   <div className="absolute top-[84px] left-1/2 transform -translate-x-1/2">
