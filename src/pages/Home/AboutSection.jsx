@@ -56,7 +56,7 @@ const AboutSection = () => {
             <div className="lg:w-[32%] relative">
               <div className="relative w-full max-w-[342px] mx-auto">
                 {/* Main Image */}
-                <img src="/images/img_image_506x338.png" className="w-full h-auto" alt="About Elias" />
+                <img src="/images/gg.png" className="w-full h-auto" alt="About Elias" />
                 
                 {/* Decorative Dots - Top Left */}
                 <div className="absolute top-[59px] left-0 flex flex-col gap-4">
@@ -134,19 +134,19 @@ const AboutSection = () => {
               </div>
 
               {/* Right Content - Contact Box */}
-              <div className="lg:w-[20%] border border-[var(--border-color)] p-4">
+              <div className="lg:w-[30%] border border-[var(--border-color)] p-2">
                 <div className="flex flex-col gap-4">
                   <h3 className="text-[var(--text-primary)] text-base font-semibold font-['Fira_Code']">Message me here</h3>
                   
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-1">
-                      <img src="/images/img_discord_blue_gray_200.svg" className="w-8 h-8" alt="Discord" />
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">!Elias#3519</span>
+                      <img src="/images/linkedIn.svg" className="w-8 h-8" alt="LinkedIn" />
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">Induma Withanage</span>
                     </div>
                     
                     <div className="flex items-center gap-1">
                       <img src="/images/img_email.svg" className="w-8 h-8" alt="Email" />
-                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">elias@elias.me</span>
+                      <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">indumawithanage1@gmail.com</span>
                     </div>
                   </div>
                 </div>
@@ -164,8 +164,8 @@ const AboutSection = () => {
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-2">
                     <img src="/images/indw.png" className="w-12 h-12" alt="Logo" />
-                    <span className="text-[var(--text-primary)] text-base font-medium font-['Fira_Code']">Elias</span>
-                    <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code'] ml-6">elias@elias-dev.ml</span>
+                    <span className="text-[var(--text-primary)] text-base font-medium font-['Fira_Code']">Induma</span>
+                    <span className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code'] ml-6">indumawithanage1@gmail.com</span>
                   </div>
                   <p className="text-[var(--text-primary)] text-base font-normal font-['Fira_Code']">
                     Web designer and front-end developer
@@ -189,7 +189,7 @@ const AboutSection = () => {
             {/* Copyright */}
             <div className="text-center">
               <p className="text-[var(--text-secondary)] text-base font-normal font-['Fira_Code']">
-                © Copyright 2022. Made by Elias
+                © Copyright 2025. Made by IndWit
               </p>
             </div>
           </div>

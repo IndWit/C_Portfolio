@@ -13,7 +13,7 @@ const Header = () => {
             <NavLink to="/">
               <img 
                 src="/images/indw.png" 
-                alt="Elias Portfolio Logo" 
+                alt="Induma Portfolio Logo" 
                 className="w-[72px] h-[20px]"
               />
             </NavLink>

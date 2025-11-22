@@ -7,12 +7,12 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "ChertNodes",
-      description: "Minecraft servers hosting",
+      title: "Legalweb App",
+      description: "Web based legal solution app",
       image: "/images/img_rectangle_22.png",
-      technologies: ["HTML", "SCSS", "Python", "Flask"],
+      technologies: ["Flutter", "Google Gemini API", "Firebase"],
       buttons: [
-        { text: "Live <~>", type: "primary" },
+        { text: "Git", type: "primary" },
         { text: "Cached >=", type: "secondary" }
       ]
     },
@@ -32,6 +32,26 @@ const ProjectsSection = () => {
       description: "Get answers to your kahoot quiz",
       image: "/images/img_rectangle_22_1.png",
       technologies: ["CSS", "Express", "Node.js"],
+      buttons: [
+        { text: "Live <~>", type: "primary" }
+      ]
+    },
+    {
+      id: 4,
+      title: "Kahoot Answers Viewer",
+      description: "Get answers to your kahoot quiz",
+      image: "/images/img_rectangle_22_1.png",
+      technologies: ["CSS", "Express", "Node.js"],
+      buttons: [
+        { text: "Live <~>", type: "primary" }
+      ]
+    },
+    {
+      id: 5,
+      title: "Kahoot Answers Viewer",
+      description: "Get answers to your kahoot quiz",
+      image: "/images/img_rectangle_22_1.png",
+      technologies: ["CSS |", "Express", "Node.js"],
       buttons: [
         { text: "Live <~>", type: "primary" }
       ]

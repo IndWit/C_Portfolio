@@ -24,7 +24,7 @@ const HeroSection = () => {
             <div className="flex justify-between items-center py-4">
               {/* Logo */}
               <div className="flex items-center gap-2">
-                <img src="/images/indw.png" className="w-12 h-12" alt="Logo" />
+                <img src="/images/lg.png" className="w-12 h-12" alt="Logo" />
                 <span className="text-[var(--text-primary)] font-bold text-base font-['Fira_Code']">IndWit</span>
               </div>
 
@@ -125,10 +125,10 @@ const HeroSection = () => {
                 <div className="relative w-full max-w-[456px] mx-auto">
                   <img src="/images/SE.png" className="w-full h-auto" alt="Elias" />
                   
-                  {/* Logo Overlay */}
+                  {/* Logo Overlay
                   <div className="absolute top-[84px] left-1/2 transform -translate-x-1/2">
                     <img src="/images/img_logo.svg" className="w-[77px] sm:w-[100px] md:w-[130px] lg:w-[154px] h-auto" alt="Logo" />
-                  </div>
+                  </div> */}
 
                   {/* Decorative Dots */}
                   <div className="absolute bottom-14 right-4 flex flex-col gap-4">

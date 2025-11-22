@@ -15,16 +15,16 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <div className="flex items-center gap-2">
                 <img 
-                  src="/images/indw.png" 
+                  src="/images/lg.png" 
                   alt="Logo icon" 
                   className="w-[48px] h-[48px]"
                 />
                 <span className="text-base font-medium leading-sm text-text-accent ml-2">
-                  Elias
+                  Induma
                 </span>
               </div>
               <span className="text-base font-normal leading-sm text-text-primary">
-                elias@elias-dev.ml
+                indumawithanage1@gmail.com
               </span>
             </div>
             <p className="text-base font-normal leading-sm text-text-accent">
