@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 const CodeTypingEffect = () => {
   const codeLines = [
     'const developer = {',
-    '  name: "Elias",',
-    '  skills: ["React", "JavaScript", "CSS"],',
-    '  passion: "creating amazing websites",',
-    '  status: "available for work"',
+    '  name: "Induma",',
+    '  skills: ["MERN", "JavaScript", "Flutter"],',
+    '  passion: "creating amazing Product",',
+    '  status: "need explore the code ..."',
     '};'
   ];
 

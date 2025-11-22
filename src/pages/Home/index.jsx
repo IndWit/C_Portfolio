@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Elias - Web Designer & Front-End Developer | Portfolio</title>
+        <title>Induma - Web Designer & Front-End Developer | Portfolio</title>
         <meta name="description" content="Elias is a skilled web designer and front-end developer crafting responsive websites where technologies meet creativity. View projects, skills, and contact information." />
         <meta property="og:title" content="Elias - Web Designer & Front-End Developer | Portfolio" />
         <meta property="og:description" content="Elias is a skilled web designer and front-end developer crafting responsive websites where technologies meet creativity. View projects, skills, and contact information." />

@@ -216,7 +216,7 @@ const Projects = () => {
                       </div>
                       <div className="p-[16px] border-t border-[var(--border-color)] flex flex-col gap-[14px]">
                         <h3 className="text-[20px] sm:text-[24px] font-medium leading-[26px] sm:leading-[31px] text-[var(--text-primary)] font-['Fira_Code']">
-                          Kahoot Answers Viewer
+                          Test one
                         </h3>
                         <p className="text-[14px] sm:text-[16px] font-normal leading-[18px] sm:leading-[21px] text-[var(--text-secondary)] font-['Fira_Code']">
                           Get answers to your kahoot quiz
@@ -229,7 +229,7 @@ const Projects = () => {
 
                     {/* ProtectX Project */}
                     <div className="border border-[var(--border-color)] flex flex-col">
-                      <img src="/images/img_rectangle_22_200x330.png" alt="ProtectX" className="w-full h-[150px] sm:h-[180px] lg:h-[200px] object-cover" />
+                      <img src="/images/Go.png" alt="ProtectX" className="w-full h-[150px] sm:h-[180px] lg:h-[200px] object-cover" />
                       <div className="p-[8px] border-t border-[var(--border-color)]">
                         <div className="flex flex-row flex-wrap gap-[8px] items-center justify-center">
                           <span className="text-[14px] sm:text-[16px] font-normal leading-[18px] sm:leading-[21px] text-[var(--text-secondary)] font-['Fira_Code']">React</span>
